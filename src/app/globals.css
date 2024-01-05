@@ -16,6 +16,5 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: hsl(var(--background))
-    ;
+  background: hsl(var(--background));
 }
