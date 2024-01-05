@@ -1,6 +1,8 @@
+import { cn } from "@/lib/utils";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 const navigation = [
@@ -10,12 +12,15 @@ const navigation = [
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const pathname = usePathname();
+
+  function isActiveLink(href: string, pathname: string) {
+    return pathname === href;
+  }
+
   return (
     <header className="absolute inset-x-0 top-0 z-50 app-container">
-      <nav
-        className="flex items-center justify-between py-6 lg:px-8"
-        aria-label="Global"
-      >
+      <nav className="flex items-center justify-between py-6">
         <div className="flex lg:flex-1 items-center gap-x-12">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -32,7 +37,10 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-white"
+                className={cn("text-sm font-semibold leading-6 text-white ", {
+                  "underline underline-offset-8 decoration-[#25A75C] decoration-4":
+                    isActiveLink(item.href, pathname),
+                })}
               >
                 {item.name}
               </Link>

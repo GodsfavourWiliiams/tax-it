@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="bg-black text-white relative">
         <Navbar />
         <div className="z-20 relative isolate app-container flex items-center">
-          <div className="pb-40 pt-48 flex items-center flex-col lg:flex-row gap-10">
+          <div className="pb-20 pt-48 flex items-center flex-col lg:flex-row gap-10">
             <div className="relative flex flex-col gap-10 w-full">
               <div className="sm:max-w-lg flex flex-col gap-5">
                 <h1 className="sm:text-[46px] text-4xl font-bold tracking-tight leading-[139.13%]">
