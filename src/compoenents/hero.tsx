@@ -1,8 +1,45 @@
 import Navbar from "./core/navbar";
 import { Icons } from "@/assets/icons";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Hero() {
+  const pathname = usePathname();
+  if (pathname === "/") {
+    return (
+      <div className="bg-black text-white relative">
+        <Navbar />
+        <div className="z-20 relative isolate app-container flex items-center">
+          <div className="pb-40 pt-48 flex items-center flex-col lg:flex-row gap-10">
+            <div className="relative flex flex-col gap-10 w-full">
+              <div className="sm:max-w-lg flex flex-col gap-5">
+                <h1 className="sm:text-[46px] text-4xl font-bold tracking-tight leading-[139.13%]">
+                  Secure & seamless <br /> online transactions
+                </h1>
+                <p className="font-normal text-base sm:text-lg leading-[160%]">
+                  Providing you with the best online payment experience
+                </p>
+              </div>
+
+              <button className="w-fit cursor-pointer rounded-lg py-2.5 px-3 text-sm font-semibold bg-gradient-to-r from-primary-base via-primary-deep to-primary-deep leading-6 text-white">
+                Create free account
+              </button>
+            </div>
+            <div className="flex items-center space-x-6 lg:space-x-8 h-full w-full ">
+              <Image
+                className=" w-full mx-auto h-auto"
+                src="/hero1.png"
+                width={200}
+                height={100}
+                unoptimized
+                alt="hero-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
   return (
     <>
       <div className="bg-black text-white relative">
