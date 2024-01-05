@@ -1,61 +1,80 @@
+import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "For Businesses", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "For Individuals", href: "/" },
+  { name: "For Businesses", href: "/business" },
 ];
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <header className="absolute inset-x-0 top-0 z-50 app-container">
       <nav
-        className="flex items-center justify-between p-6 lg:px-8"
+        className="flex items-center justify-between py-6 lg:px-8"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
+        <div className="flex lg:flex-1 items-center gap-x-12">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Image
-              className="w-auto h-8"
+              className="w-auto h-12"
               src="/tpay_logo1.png"
-              width={100}
+              width={200}
               height={100}
               alt=""
             />
           </Link>
+          <div className="hidden lg:flex lg:gap-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-white"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
         </div>
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
             onClick={() => {
               setMobileMenuOpen(true);
             }}
           >
             <span className="sr-only">Open main menu</span>
-            {/* <H className="w-6 h-6" aria-hidden="true" /> */}
+            <MenuIcon className="w-6 h-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-6">
+          <Link
+            href={"#"}
+            className="text-sm font-semibold leading-6 text-white"
+          >
+            About Us
+          </Link>
+          <Link
+            href={"#"}
+            className="text-sm font-semibold leading-6 text-white"
+          >
+            Contact
+          </Link>
+          <span className="border h-5" />
+          <Link
+            href={"/"}
+            className="text-sm font-semibold leading-6 text-white"
+          >
+            Login
+          </Link>
+          <button className="rounded-lg py-2.5 px-3 text-sm font-semibold bg-gradient-to-r from-primary-base via-primary-deep to-primary-deep leading-6 text-white">
+            Create free account
+          </button>
         </div>
       </nav>
     </header>
