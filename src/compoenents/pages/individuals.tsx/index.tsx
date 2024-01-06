@@ -1,6 +1,8 @@
 "use client";
 
 import { Icons } from "@/assets/icons";
+import Features from "@/compoenents/features";
+import GetStartedCTA from "@/compoenents/get-started";
 import Hero from "@/compoenents/hero";
 import PaymentTool from "@/compoenents/payment-tool";
 import React from "react";
@@ -29,6 +31,8 @@ const Index = () => {
     <div>
       <Hero />
       <PaymentTool data={features} />
+      <Features />
+      <GetStartedCTA />
     </div>
   );
 };

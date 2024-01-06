@@ -8,12 +8,12 @@ const PaymentTool = (props: Props) => {
   const { data } = props;
 
   return (
-    <div className="py-24 app-container mx-auto ">
+    <div className="pb-10 pt-20 sm:py-20 app-container mx-auto ">
       <div className="mx-auto max-w-2xl text-center">
         <p className="mt-2 text-3xl font-semibold tracking-tight text-[#4F4F4F] sm:text-4xl lending-[122.222%]">
           Payments tools designed for you
         </p>
-        <p className="mt-3 text-lg leading-[160%] text-[#4F4F4F]">
+        <p className="mt-3 text-base sm:text-lg leading-[160%] text-[#4F4F4F]">
           Explore payment features that provides you with every possible
           solution
         </p>
