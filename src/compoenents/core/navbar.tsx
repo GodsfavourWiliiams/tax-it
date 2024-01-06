@@ -11,7 +11,7 @@ const navigation = [
 ];
 
 const Navbar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [, setMobileMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
 
   function isActiveLink(href: string, pathname: string) {
