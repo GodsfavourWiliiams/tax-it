@@ -3,7 +3,7 @@ import React from "react";
 const CTA = () => {
   return (
     <div className="py-10 sm:py-20">
-      <div className="app-container overflow-hidden relative h-[400px] md:h-[522px] flex flex-col justify-center shadow-2xl rounded-lg lg:flex lg:gap-x-20 lg:px-24 px-6 bg-gradient-to-b from-[#7DC263] via-[#77BD5E] to-[#5FB04E]">
+      <div className="app-container overflow-hidden relative h-[350px] md:h-[522px] flex flex-col justify-center shadow-2xl rounded-lg lg:flex lg:gap-x-20 lg:px-24 px-6 bg-gradient-to-b from-[#7DC263] via-[#77BD5E] to-[#5FB04E]">
         <div className="text-left space-y-4 z-20">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Send funds
