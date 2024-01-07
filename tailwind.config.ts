@@ -39,6 +39,7 @@ const config: Config = {
           foreground: "hsl(var(--accent-foreground))",
         },
       },
+
       screens: {
         nano: "420px",
         xs: "480px",
