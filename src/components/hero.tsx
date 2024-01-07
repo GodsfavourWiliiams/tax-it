@@ -21,7 +21,7 @@ export default function Hero() {
                 </p>
               </div>
 
-              <button className="w-fit cursor-pointer rounded-lg py-2.5 px-3 text-sm font-semibold bg-gradient-to-r from-primary-base via-primary-deep to-primary-deep leading-6 text-white">
+              <button className="w-fit cursor-pointer rounded-lg p-3.5 text-sm font-semibold bg-gradient-to-r from-primary-base via-primary-deep to-primary-deep leading-6 text-white">
                 Create free account
               </button>
             </div>
@@ -50,12 +50,12 @@ export default function Hero() {
               <h1 className="sm:text-[46px] text-4xl font-bold tracking-tight leading-[139.13%]">
                 Manage payroll, compliance & HR in real time
               </h1>
-              <p className="font-normal text-base sm:text-lg leading-[160%]">
+              <p className="font-normal text-base sm:text-lg leading-[160%] w-full max-w-[584px]">
                 Make income tax remittances to the state internal revenue
                 service for your employees.
               </p>
-              <div className="flex items-center justify-center gap-x-6">
-                <button className="cursor-pointer rounded-lg py-2.5 px-3 text-sm font-semibold bg-gradient-to-r from-primary-base via-primary-deep to-primary-deep leading-6 text-white">
+              <div className="flex items-center justify-center gap-x-6 mt-2">
+                <button className="cursor-pointer rounded-lg p-3.5 text-sm font-semibold bg-gradient-to-r from-primary-base via-primary-deep to-primary-deep leading-6 text-white">
                   Create free account
                 </button>
               </div>
@@ -71,7 +71,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="-mt-24 relative z-30">
+      <div className="-mt-24 sm:-mt-40 relative z-30">
         <Image
           className="max-w-[95%] lg:max-w-[1036px] w-full mx-auto h-auto"
           src="/hero2.png"

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { MenuIcon } from "lucide-react";
+import { Cross, CrossIcon, MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -48,16 +48,29 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex lg:hidden">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-            onClick={() => {
-              setMobileMenuOpen(true);
-            }}
-          >
-            <span className="sr-only">Open main menu</span>
-            <MenuIcon className="w-6 h-6" aria-hidden="true" />
-          </button>
+          {!mobileMenuOpen ? (
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+              onClick={() => {
+                setMobileMenuOpen(true);
+              }}
+            >
+              <span className="sr-only">Open main menu</span>
+              <MenuIcon className="w-6 h-6" aria-hidden="true" />
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+              onClick={() => {
+                setMobileMenuOpen(false);
+              }}
+            >
+              <span className="sr-only">Close main menu</span>
+              <Cross className="w-7 h-7 rotate-45" aria-hidden="true" />
+            </button>
+          )}
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-6">
@@ -85,6 +98,45 @@ const Navbar = () => {
           </button>
         </div>
       </nav>
+      <div
+        className={cn(
+          " gap-8 bg-white text-black rounded-lg p-4 transition-all duration-300 ease-in-out",
+          {
+            "flex flex-col": mobileMenuOpen,
+          },
+          {
+            " hidden": !mobileMenuOpen,
+          }
+        )}
+      >
+        {navigation.map((item) => (
+          <Link
+            key={item.name}
+            href={item.href}
+            onClick={() => {
+              setMobileMenuOpen(false);
+            }}
+            className={cn("text-sm font-semibold leading-6 ", {
+              "underline underline-offset-8 decoration-[#25A75C] decoration-4":
+                isActiveLink(item.href, pathname),
+            })}
+          >
+            {item.name}
+          </Link>
+        ))}
+        <Link href={"#"} className="text-sm font-semibold">
+          About Us
+        </Link>
+        <Link href={"#"} className="text-sm font-semibold">
+          Contact
+        </Link>
+        <Link href={"/"} className="text-sm font-semibold">
+          Login
+        </Link>
+        <button className="rounded-lg py-2.5 px-3 text-sm font-semibold bg-gradient-to-r from-primary-base via-primary-deep to-primary-deep leading-6 text-white">
+          Create free account
+        </button>
+      </div>
     </header>
   );
 };

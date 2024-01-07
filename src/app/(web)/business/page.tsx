@@ -1,4 +1,4 @@
-import View from "@/compoenents/pages/business.tsx";
+import View from "@/components/pages/business.tsx";
 import React from "react";
 
 const Page = () => {
