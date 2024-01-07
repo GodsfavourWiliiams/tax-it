@@ -5,7 +5,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="app-container py-16 flex md:flex-row flex-col items-start justify-between">
+    <div className="app-container py-16 flex md:flex-row flex-col items-start justify-between gap-8">
       <div className="flex flex-col flex-shrink-0 item-start justify-start">
         <Link href="/" className="w-fit">
           <span className="sr-only">Your Company</span>

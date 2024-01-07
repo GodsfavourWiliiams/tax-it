@@ -1,12 +1,12 @@
 "use client";
 
 import { Icons } from "@/assets/icons";
-import CTA from "@/compoenents/cta";
-import Features from "@/compoenents/features";
-import Footer from "@/compoenents/footer";
-import GetStartedCTA from "@/compoenents/get-started";
-import Hero from "@/compoenents/hero";
-import PaymentTool from "@/compoenents/payment-tool";
+import CTA from "@/components/cta";
+import Features from "@/components/features";
+import Footer from "@/components/footer";
+import GetStartedCTA from "@/components/get-started";
+import Hero from "@/components/hero";
+import PaymentTool from "@/components/payment-tool";
 import React from "react";
 
 const Index = () => {
@@ -29,11 +29,30 @@ const Index = () => {
       icon: Icons.EMI,
     },
   ];
+
+  const payrollFeatures = [
+    {
+      name: "Pay bills",
+      description: "Paying your bills has never been so easy.",
+    },
+    {
+      name: "Buy Airtime & Data",
+      description: "Never get caught with low airtime and data again!",
+    },
+    {
+      name: "Money Transfer",
+      description: "Transferring money is now hassle-free.",
+    },
+    {
+      name: "Pay Toll Fee",
+      description: "Never worry about getting a toll ticket again",
+    },
+  ];
   return (
     <div>
       <Hero />
       <PaymentTool data={features} />
-      <Features />
+      <Features data={payrollFeatures} />
       <GetStartedCTA />
       <CTA />
       <Footer />

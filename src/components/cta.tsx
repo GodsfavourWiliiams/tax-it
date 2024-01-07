@@ -15,7 +15,7 @@ const CTA = () => {
             Buy utilities
           </h2>
           <div className="mt-10 flex items-start justify-start gap-x-6 lg:justify-start">
-            <button className="w-fit cursor-pointer rounded-lg py-2.5 px-3 text-sm font-semibold bg-white text-primary leading-6 text-white">
+            <button className="w-fit cursor-pointer rounded-lg py-2.5 px-3 text-sm font-semibold bg-white text-primary leading-6">
               Get started
             </button>
           </div>
