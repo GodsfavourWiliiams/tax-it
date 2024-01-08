@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Cross, CrossIcon, MenuIcon } from "lucide-react";
+import { Cross, MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -100,12 +100,12 @@ const Navbar = () => {
       </nav>
       <div
         className={cn(
-          " gap-8 bg-white text-black rounded-lg p-4 transition-all duration-300 ease-in-out",
+          " gap-7 bg-white text-black rounded-lg p-4 transition-all duration-300 ease-in-out",
           {
-            "flex flex-col": mobileMenuOpen,
+            "animate-enter flex flex-col ": mobileMenuOpen,
           },
           {
-            " hidden": !mobileMenuOpen,
+            "animate-leave hidden": !mobileMenuOpen,
           }
         )}
       >
@@ -116,7 +116,7 @@ const Navbar = () => {
             onClick={() => {
               setMobileMenuOpen(false);
             }}
-            className={cn("text-sm font-semibold leading-6 ", {
+            className={cn("text-sm leading-6 ", {
               "underline underline-offset-8 decoration-[#25A75C] decoration-4":
                 isActiveLink(item.href, pathname),
             })}
@@ -124,13 +124,13 @@ const Navbar = () => {
             {item.name}
           </Link>
         ))}
-        <Link href={"#"} className="text-sm font-semibold">
+        <Link href={"#"} className="text-sm">
           About Us
         </Link>
-        <Link href={"#"} className="text-sm font-semibold">
+        <Link href={"#"} className="text-sm">
           Contact
         </Link>
-        <Link href={"/"} className="text-sm font-semibold">
+        <Link href={"/"} className="text-sm">
           Login
         </Link>
         <button className="rounded-lg py-2.5 px-3 text-sm font-semibold bg-gradient-to-r from-primary-base via-primary-deep to-primary-deep leading-6 text-white">

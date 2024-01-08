@@ -39,7 +39,20 @@ const config: Config = {
           foreground: "hsl(var(--accent-foreground))",
         },
       },
-
+      keyframes: {
+        enter: {
+          "0%": { transform: "scale(0.5)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        leave: {
+          "100%": { transform: "scale(1)", opacity: "1" },
+          "0%": { transform: "scale(0)", opacity: "0" },
+        },
+      },
+      animation: {
+        enter: "enter 0.3s ease-in-out",
+        leave: "leave 1s ease-in-out",
+      },
       screens: {
         nano: "420px",
         xs: "480px",

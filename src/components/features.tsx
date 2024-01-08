@@ -11,8 +11,8 @@ export default function Features({ data }: { data: any }) {
         <div className="app-container">
           <div className="mx-auto grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 place-content-center">
             <div className="flex items-center gap-6 lg:max-w-lg self-center">
-              <div className="h-[520px] nano:h-[450px] sm:h-[580px] bg-[#DCE2EA] w-3.5 sm:w-1.5 lg:w-4 mb-4 relative">
-                <div className="bg-[#25A75C] w-1.5 h-[100px] absolute bottom-0" />
+              <div className="h-[520px] nano:h-[450px] sm:h-[580px] bg-[#DCE2EA] w-3 sm:w-1.5 lg:w-4 mb-4 relative">
+                <div className="bg-[#25A75C] w-1 xs:w-1.5 h-[100px] absolute bottom-0" />
               </div>
               <dl className="max-w-xl flex flex-col gap-7 sm:gap-10 mb-5 text-[#4F4F4F] lg:max-w-none">
                 {data.map((feature: { name: string; description: string }) => (
